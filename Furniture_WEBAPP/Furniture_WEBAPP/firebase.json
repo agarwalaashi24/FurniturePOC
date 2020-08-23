@@ -1,0 +1,17 @@
+{
+  "hosting": {
+    "target": "en",
+    "public": "dist/furniture-shopping",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

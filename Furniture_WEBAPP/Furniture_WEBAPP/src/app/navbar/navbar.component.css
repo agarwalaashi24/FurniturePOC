@@ -1,0 +1,64 @@
+.dropdown-toggle{
+    cursor: pointer;
+}
+
+.navbar-fixed{
+    background-color: #D8CD80;
+}
+a{
+    cursor: pointer;
+}
+.fa-search, .far, .navbar-brand, .fas, .fa,span,.dropdown-toggle{
+    color:white;
+}
+.far, .fas, .nav-link{
+    font-size: 1.1rem;
+    color: #8B4513;
+}
+.search-btn{
+    color: white;
+    /*float: right;*/
+    width: 240px;
+    padding: 0 6px;
+    height: 40px;
+    border-radius:50%;
+    background: #1E1A11;
+  /*  display: flex;*/
+    /*justify-content: center;*/
+    align-items: center;
+    font-size: 22px;
+}
+.search-txt{
+    border: none;
+    background: white;
+    outline: none;
+   /* float:left;*/
+    color: black;
+    font-size: 16px;
+    /*transition: 0.4s;*/
+    line-height: 37px;
+    width: 240px;
+    padding: 0 15px;
+    border-radius: 20px;
+}
+
+#searchResult{
+    background-color:honeydew;
+    border:solid 1px black;
+    border-radius: 5px;
+}
+.navbar-brand{
+    font-family: "Bauhaus 93";
+    font-size: 1.7rem;
+    color:#8B4513;
+}
+/* .navbar-brand:hover{
+    font-family: "Bauhaus 93";
+    font-size: 1.7rem;
+    color:#8B4513;
+}
+.navbar-brand::after{
+    font-family: "Bauhaus 93";
+    font-size: 1.7rem;
+    color:#8B4513;
+} */

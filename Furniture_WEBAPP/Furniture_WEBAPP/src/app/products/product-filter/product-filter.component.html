@@ -1,0 +1,22 @@
+<div class="sticky-top">
+  <div class="list-group">
+    <label><strong>Price</strong></label>
+    <label><input type="radio" name="price" [routerLink]="['/products/',category]"> All </label>
+    <label><input type="radio" name="price" [routerLink]="['/products/',category]"
+        [queryParams]="{ price: '1000-5000' }"> ₹ 1000 - ₹
+      5000
+    </label>
+    <label><input type="radio" name="price" [routerLink]="['/products/',category]"
+        [queryParams]="{ price: '5000-10000' }"> ₹ 5000 - ₹
+      10000
+    </label>
+    <label><input type="radio" name="price" [routerLink]="['/products/',category]"
+        [queryParams]="{ price: '10000-20000' }"> ₹ 10000 - ₹
+      20000
+    </label>
+    <label><input type="radio" name="price" [routerLink]="['/products/',category]"
+        [queryParams]="{ price: '20000-30000' }"> ₹ 20000 - ₹
+      30000
+    </label>
+  </div>
+</div>

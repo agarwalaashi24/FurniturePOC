@@ -1,0 +1,63 @@
+<div class="container mb-5">
+  <div class="row" style="margin-top:3rem;">
+    <div class="col-6 font-weight-bold cart">MY CART</div>
+    <div class="col-6 d-flex justify-content-end">
+      <button class="btn btn-checkout" routerLink="/check-out" *ngIf="show">CHECKOUT</button>
+    </div>
+  </div>
+  <div class="row mt-5" *ngIf="show" >
+    <div class="col-6 headers ">ITEM</div>
+    <div class="col-3 headers d-flex justify-content-center">QUANTITY</div>
+    <div class="col-3 headers d-flex justify-content-end">PRICE</div>
+  </div>
+
+  <hr>
+
+  <div *ngIf="cart$ | async as cart">
+    <div *ngFor="let item of cart.items" >
+      <div class="row" style="max-height: 70%;margin-top:3rem;">
+        <div class="col-6">
+          <div class="row">
+            <div class="col-3 pl-lg-0 d-flex justify-content-center ">
+              <div class="div-img">
+                <div [style.backgroundImage]="'url(' + item.imgUrl +')'" class="img"> </div>
+              </div>
+            </div>
+            <div class="col pl-lg-0">
+              <a class="title" [routerLink]="['/product-details/',item.product.id]">
+                {{ item.product.title }}
+              </a>
+              <div class="d-flex align-items-baseline">
+                <span>CATEGORY</span><span class="pipe">|</span><span class="text-uppercase">{{item.product.category}}</span>
+              </div>
+
+              <div class="remove">
+                <button class="btn btn-remove d-flex align-items-baseline" (click)="deleteItem(item.product)">
+                  <i class="material-icons"> delete </i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-3 d-flex justify-content-center">
+          <product-quantity [product]="item.product" [shopping-cart]="cart">
+          </product-quantity>
+        </div>
+        <div class="col-3 d-flex justify-content-end font-weight-bold">
+          <div class="price">
+            <span class="" style="font-size: 1rem;">₹</span>
+            {{ item.product.price }}
+          </div>
+        </div>
+      </div>
+      <hr>
+    </div>
+    <div class="row" *ngIf="show">
+      <div class="col text-right">
+        <span class="font-weight-bold" style="font-size: 1rem;">TOTAL AMOUNT: </span>
+        <span style="font-size: 1rem;">₹ {{cart.totalPrice}}</span>
+      </div>
+    </div>
+    <h4 *ngIf="!show">Your cart is empty</h4>
+  </div>
+</div>
